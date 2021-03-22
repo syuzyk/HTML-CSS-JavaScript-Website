@@ -89,7 +89,7 @@ app.post("/send-form", urlencodedParser, function (req,res){
 
 
 app.listen(8000, () => {
-    console.log("Display Vpackage dislay listening on port 8000");
+    console.log("Display Vpackage display listening on port 8000");
 })
 
 app.get('/', function (req, res) {
