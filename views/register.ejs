@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Customer Registration </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<%- include('../partials/header.ejs', {page: 'register'}) %>	
+	
+	<style>
+		.row {
+			display: flex;
+		}
+		.column {
+			flex: 50%;
+			padding: 10px;
+			background-color: rgba(211, 211, 211, 0.4);
+		}
+
+		.formBlock {
+			text-align:center;
+		}
+		#personal, #account{
+			text-align:center;
+			font-family:helvetica;
+		}
+
+		label {
+			padding: 6px 0;
+			font-family:helvetica;
+		}
+
+		input,
+		select {
+			padding:6px 0;
+			vertical-align: middle;
+			font-family:helvetica;
+			
+		}
+		#background{
+			top:0;
+			height: 900px;
+			width:100%;
+			opacity:.1;
+			position: fixed;
+			z-index:-1;
+		} 
+	</style>
+</head>
+
+<body id="pagebody">
+	<hr>
+	<!---------FORM INPUT FIELD-------->
+	<img id="background" src="photos/canyon.jpg">
+	<div class="formBlock">
+		<form name="myForm" id="myForm" action="/send-form" method="POST">
+			<div class="personal-details">
+				<h2 id="personal">Personal Details</h2>
+				<div><label for="fname">First Name:</label></div>
+				<div><input type="text" name="CustFirstName" id="fname" required></div>
+				<div><label for="lname">Last Name:</label></div>
+				<div><input type="text" name="CustLastName" id="lname" required></div>
+				<div><label for="phone">Phone Number:</label></div>
+				<div><input type="number" name="CustHomePhone" id="phone" required></div>
+				<div><label for="address">Street Address:</label></div>
+				<div><input type="text" name="CustAddress" id="address" required></div>
+				<div><label for="city"> City:</label></div>
+				<div><input type="text" name="CustCity" id="city" required></div>
+				<div><label for="province"> Province:</label></div>
+				<div><input type="text" name="CustProv" id="province" required></div>
+				<div><label for="pcode"> Postal Code:</label></div>
+				<div><input type="text" name="CustPostal" id="pcode" required></div>
+				<label for="bdate">Birthday: </label>
+				<div class="bdate-block">
+					<select name="bday-day" id="bday-day" class="bday-day" required>
+						<option value="01">01</option>
+						<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+					</select>
+					<select class="bday-month" name="bday-month" id="bday-month" required>
+						<option value=""></option>
+						<option value="January">January</option>
+						<option value="February">February</option>
+						<option value="March">March</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="August">August</option>
+						<option value="September">September</option>
+						<option value="October">October</option>
+						<option value="November">November</option>
+						<option value="December">December</option>
+					</select>
+					<input type="text" name="bday-year" size="2" id="bday-year" required>
+				</div>
+			</div>
+
+
+			<div class="account-details">
+				
+					<h2 id="account">Account Details</h2>
+				
+				<div><label for="email">Email:</label></div>
+				<div><input type="text" name="CustEmail" id="email"></div>
+				<div><label for="password">Password:</label></div>
+				<div><input type="password" name="passwrd" id="password" required></div>
+				<div><label for="passwordConf">Confirm Password:</label></div>
+				<div><input type="password" name="passwordConf" id="passwordConf" required></div><br>
+		</form>
+		
+		<button type="submit" value="Register" onclick="return confirmForm()">Register</button>
+		<button type="button" value="  Reset  " onclick="confirmReset()">Reset</button>
+	</div>
+	</div>
+
+	<script>
+		function confirmForm() {
+			var a = document.forms["myForm"]["fname"].value;
+			var b = document.forms["myForm"]["lname"].value;
+			var c = document.forms["myForm"]["phone"].value;
+			var d = document.forms["myForm"]["address"].value;
+			var e = document.forms["myForm"]["city"].value;
+			var f = document.forms["myForm"]["province"].value;
+			var g = document.forms["myForm"]["pcode"].value;
+			var h = document.forms["myForm"]["bday-day"].value;
+			var i = document.forms["myForm"]["bday-month"].value;
+			var j = document.forms["myForm"]["bday-year"].value;
+			var k = document.forms["myForm"]["email"].value;
+			var l = document.getElementById("password").value;
+			var m = document.getElementById("passwordConf").value;
+
+			var regExPostalCode = /[a-zA-Z][0-9][a-zA-Z](-| |)[0-9][a-zA-Z][0-9]/;
+			var regExEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+			if (a == "" || b == "" || c == "" || d == "" || e == "" || f == "" || g == "" || h == "" || i == "" || j == "" || l == "" || m == "") {
+				alert("Values are required for each text box");
+				return false;
+			}
+			if (l != m) {
+				alert("Your passwords do not match");
+				return false;
+			}
+			if(regExPostalCode.test(g) == false) {
+				alert("Invalid Postal Code");
+				return false;
+			}
+			/*if(regExEmail.test(k)==false){
+				alert("Invalid Email");
+				return false;
+			}*/
+			else {
+
+				var answer = confirm("Confirm Submission?");
+				if (answer) {
+					return true;
+
+				} else {
+					return false;
+				}
+			}
+		}
+
+		function confirmReset() {
+			var answer = confirm("Reset form?");
+			if (answer) {
+				document.getElementById("myForm").reset();
+			} else {
+				return;
+			}
+		}
+
+
+
+	</script>
+
+</body>
+<div>Copyright Travel Agency 1999<sup>&copy;</sup></div>
+
+</html>

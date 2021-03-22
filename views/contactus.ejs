@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<!-- nav bar -->
+	<link rel ="stylesheet" href = "CSSStylesheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<%- include('../partials/header.ejs', {page: 'contactus'}) %>
+
+	<head>
+		<title> Contact Us </title>
+	</head>
+	
+	<body id="pagebody">
+		<div class="contact">
+			<p class="contact_title">Contact information listed below</p>
+			<p class="company_contact_info">
+				Business Email: thetravelcompany@gmail.com<br>
+				Business Phone Number: 407-579-2842<br>
+				<br>
+				Business Hours Timetable:
+			</p>
+			<ul class = "businesshours">
+				<li>Monday: 8am - 9pm</li>
+				<li>Tuesday: 10am - 10pm</li>
+				<li>Wednesday: 7am - 10pm</li>
+				<li>Thursday: 9am - 6pm</li>
+				<li>Friday: 11am - 9pm</li>
+				<li>Saturday: 8am - 9pm</li>
+				<li>Sunday: 11am - 5pm</li>
+		</ul>
+		</div>
+		<ul>
+			<% for (var i = 0; i < agents.length; i++) { %>
+				<li> <%= agents[i].AgtFirstName; %> </li>
+				<li> <%= agents[i].AgtLastName; %> </li>
+			<% }; %>
+		</ul>
+	</body>
+	
+</html>

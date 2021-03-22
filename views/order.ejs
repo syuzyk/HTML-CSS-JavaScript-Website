@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+<title> Customer Registration </title>
+<%- include('../partials/header.ejs', {page: 'order'}) %>
+</head>
+<body id="pagebody">
+<%
+function calculatePrice(subtotal) {
+var adminFee = 5.60
+var tax = 1.05
+total = (subtotal * tax) + 5.60
+return total
+}
+%>
+<p class=porder> Congratulations! </p>
+
+ <p><b> Please confirm your order </b></p>
+<div class=confirmorder>
+<p><b>Vacation Package Name: </b><%= data.PkgName;%></p>
+<p><b>Travel Date: </b><%= data.TravelStartDate;%></p>
+<p><b>Vacation Description: </b><%= data.PkgDesc;%> </p>
+<p><b>Travel Return Date: </b><%= data.TravelEndDate;%></p>
+<p><b>Subtotal:</b> </p>
+<p><b>Total Amount:</b> <%= calculatePrice(78.60) %> </p>
+</div>
+
+ <br><br>
+<p><b> Enter your credit card information</b></p>
+<form class = orderform>
+<div class=orderdiv>
+<label for="custName"></label>
+<input type="text" id="custName" placeholder="Enter your full name" required></div>
+<div class=orderdiv>
+<label for="credNum"></label>
+<input type="number" id="credNum" placeholder="Enter your 16 digit credit card number" length =16 required></div>
+<div class=orderdiv>
+<label for="custName"></label>
+<input type="text" id="cvc" placeholder="CVC" length=3 required></div>
+<div class=orderdiv>
+<label for="custName"></label>
+<input type="date" id="expirydate" placeholder="Expiry date" required></div>
+</form>
+</div>
+<br>
+<button type="submit" >Submit</button>
+
+
+ </body>
+</html>

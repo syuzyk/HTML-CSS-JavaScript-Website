@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registration Successful</title>
+	<%- include('../partials/header.ejs', {page: 'register'}) %>	
+	
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		#div{
+			text-align: center;
+			font-size: 18px;
+		}
+		
+	</style>
+</head>
+
+<body id="pagebody">
+	<hr>
+	<div id="div">
+	<p>Registration Successful!</p><br>
+    <p>Thank you, <b><%= data.CustFirstName %> <%= data.CustLastName %></b> for considering Travel Experts!</p>
+	<p>We will email you at: <b><%= data.CustEmail %></b></p>
+	<p>Or call this number: <b><%= data.CustHomePhone %></b></p>
+    </div>	
+	
+	
+
+</body>
+<div id="footer">Copyright Travel Agency 1999<sup>&copy;</sup></div>
+
+</html>

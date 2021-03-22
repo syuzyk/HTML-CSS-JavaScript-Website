@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Vacation Package </title>
+	<link href="mainpage.ejs">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+	<%- include('../partials/header.ejs', {page: 'vpackage'}) %>
+</head>
+
+<body id="pagebody">
+	<h1></h1>
+	<h6></h6>
+
+	<!-- travel package tabs-->
+	<div class="tab">
+		<button class="tablinks " onclick="openCity(event, 'oxford')">Autumnal Oxford</button>
+		<button class="tablinks " onclick="openCity(event, 'kelowna')"> Summer in Kelowna</button>
+		<button class="tablinks " onclick="openCity(event, 'hawaii')"> Hawaii Spring</button>
+		<button class="tablinks " onclick="openCity(event, 'toronto')"> Winter in Toronto</button>
+	</div>
+	<!-- ask user information about travel-->
+	<!--
+	<div class="myContainer">
+		<div class = "row">
+			<div class = "col-4 col-xs-12 d-flex justify-content-center">
+				<label class="smallertext"><b>Date of Travel</b></label>
+				<input id="travelday" type="date"/> 
+			</div>
+			<div class = "col-4 col-xs-12 d-flex justify-content-center">
+					<label class="smallertext"><b>Return Date</b></label>
+					<input id="returnday" type="date" />
+			</div>
+			<div class = "col-4 col-xs-12 d-flex justify-content-center">
+					<input type="submit">
+			</div>
+		</div>
+	</div>-->
+	<hr>
+
+
+
+	<div id="oxford" class="tabcontent" style="display:block">
+		<h3><%= packages[0].PkgName;%></h3>
+		<p><%= packages[0].PkgDesc;%></p>
+		<div id="oxfordContainer"></div>
+		<div class="row ">
+
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford1.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford </p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford2.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford</p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+
+		
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford3.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford </p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford4.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford </p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford5.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford</p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford6.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford </p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+
+			<div class="col-lg-3  col-md-4 col-s-12 text-center">
+				<img src="Oxford7.jpg" width="200" height="200">
+				<br>
+				<p class="desination"> Calgary to Oxford </p>
+				<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[0].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[0].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[0].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[0].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[0].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[0].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[0].PkgName;%>">Order</button><br><br>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="kelowna" class="tabcontent " style="display:block">
+		<h3><%= packages[1].PkgName;%></h3>
+		<p><%= packages[1].PkgDesc;%></p>
+		<div id="kelownaContainer ">
+			<div class="row">
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna1.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna2.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna</p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna3.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna4.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna5.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna</p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna6.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna7.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Kelowna8.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Kelowna </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[1].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[1].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[1].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[1].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[1].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[1].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[1].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="hawaii" class="tabcontent" style="display:block">
+		<h3><%= packages[2].PkgName;%></h3>
+		</h3>
+		<p><%= packages[2].PkgDesc;%></p>
+		<div id="hawaiiContainer">
+			<div class="row">
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Hawaii1b.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Hawaii </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[2].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[2].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[2].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[2].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[2].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[2].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[2].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Hawaii2.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Hawaii </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[2].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[2].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[2].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[2].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[2].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[2].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[2].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Hawaii3.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Hawaii </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[2].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[2].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[2].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[2].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[2].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[2].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[2].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Hawaii4.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Hawaii </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[2].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[2].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[2].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[2].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[2].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[2].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[2].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="toronto" class="tabcontent" style="display:block">
+		<h3><%= packages[3].PkgName;%></h3>
+		<p><%= packages[3].PkgDesc;%></p>
+		<div id="torontoContainer">
+			<div class="row">
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto1.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto2.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto3.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto4.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto5.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto6.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto7.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto1.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto8.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+				<div class="col-lg-3  col-md-4 col-sm-12 text-center">
+					<img src="Toronto9.jpg" width="200" height="200">
+					<br>
+					<p class="desination"> Calgary to Toronto </p>
+					<!------------------------database information------------>
+				<p class="price"><b>$<%= packages[3].PkgBasePrice;%></b></p>
+				<p class="desc">Start Date: <b><%= packages[3].PkgStartDate;%></b></p>
+				<p class="desc">End Date: <b><%= packages[3].PkgEndDate;%></b></p>
+				<!------------------------Form info-->
+				<form method="POST" action="/order">
+					<input name="TravelStartDate" value="<%= packages[3].PkgStartDate;%>" type="hidden">
+					<input name="PkgDesc" value="<%= packages[3].PkgDesc;%>" type="hidden">
+					<input name="TravelEndDate" value="<%= packages[3].PkgEndDate;%>" type="hidden">
+					<button name="PkgName" type="submit" value="<%= packages[3].PkgName;%>">Order</button><br><br>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function openCity(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		//buttons to open orders page//
+		function order() { window.open("/order"); }
+	</script>
+
+	<footer></footer>Copyright Travel Agency 1999<sup>&copy;</sup></div>
+</body>
+
+
+</html>
+
+
+<!-- Photos used
+
+canyon photo: https://unsplash.com/  A5rCN8626Ck
+mountain photo: https://unsplash.com/  Yui5vfKHuzs
+greece: https://unsplash.com/  XGKaRnWjv1c
+germany:https://unsplash.com/  g_gwdpsCVAY
+paris: https://unsplash.com/  CB0Qrf8ib4I
+cable car: https://unsplash.com/  jg_HDtdEVy0

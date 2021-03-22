@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" language="JavaScript" type="text/css" href="CSSstylesheet.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<div class="w3-bar w3-indigo">
+			<a href="mainpage" class="w3-bar-item w3-button">Home</a>
+			<a href="vpackage" class="w3-bar-item w3-button">Packages</a>
+			<a href="custregist" class="w3-bar-item w3-button">Registration</a>
+			<a href="contactus" class="w3-bar-item w3-button">Contacts</a>
+			<a href="login" class="w3-bar-item w3-button" style="float:right;">Login</a>
+		</div>
+		
+		<header id="mainpageheader"><br>Welcome to Travel Agency<h1 id="headerh1">The best vacation experience.</h1></header>
+		
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			.row {
+				display: flex;
+			}
+			.column {
+				flex: 50%;
+				padding: 10px;
+				background-color: rgba(211,211,211,0.4);
+			}
+		</style>
+		
+		<script>
+			var defaultImg = "media/oxford5.jpg";
+			
+			var descs = new Array();
+			descs[0] = "Autumnal Oxford";
+			descs[1] = "Summer in Kelowna";
+			descs[2] = "Hawaiian Spring";
+			descs[3] = "Toronto in Winter";
+			
+			var myImages = ["media/oxford5.jpg", "media/kelowna6.jpg", "media/hawaii4.jpg", "media/toronto3.jpg"];
+			
+			var myOxfordPics = ["media/oxford1.jpg","media/oxford2.jpg","media/oxford3.jpg","media/oxford4.jpg","media/oxford5.jpg",];
+			var myKelownaPics = ["media/kelowna1.jpg","media/kelowna2.jpg.jpg","media/kelowna3.jpg","media/kelowna4.jpg","media/kelowna5.jpg",];
+			var myHawaiiPics = ["media/hawaii1.jpg","media/hawaii2.jpg","media/hawaii3.jpg","media/hawaii4.jpg","media/hawaii5.jpg",];
+			var myTorontoPics = ["media/toronto1.jpg","media/toronto2.jpg","media/toronto3.jpg","media/toronto4.jpg","media/toronto5.jpg",];
+
+		</script>
+		
+	</head>
+	<div id="container">
+	<div id="header"></div>
+	<div id="body">
+		<body id="firstpagebody">
+			<div class="row">
+				<div class="column">
+					
+					<table id="imagetable">
+					<script>
+						function loadImage(imgName)
+						{
+							document.getElementById("myImage").src = imgName;
+						}
+						for (i=0; i<descs.length; i++)
+						{
+							document.write("<th id='imagetableth'> |");
+							var myString = "<td id='imagetabletd' onclick='loadImage(\"" + myImages[i] + "\")'>"; 
+							document.write(myString); 
+							document.write(descs[i]);
+							document.write("</td>");
+							document.write("</th>");
+						}
+					</script>
+										<h6 id="galleryh6">
+					<div class="gallery">
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/kelowna2.jpg">
+						</div>  
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/hawaii3.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/toronto2.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/oxford4.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/hawaii2.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/oxford2.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="media/oxford1.jpg">
+						</div>
+					</h6>
+					</table>
+					
+
+					
+					<div class="England"><img id="myImage" src="media/oxford5.jpg"/><br /></div>
+					</div>
+			<div id="footer">Copyright Travel Agency 1999<sup>&copy;</sup></div>
+			
+		</body>
+		</div>
+	</div>
+</html>
+
+

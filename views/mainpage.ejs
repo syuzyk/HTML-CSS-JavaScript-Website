@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!---------------Header from Partials---------------------->
+		<%- include('../partials/header.ejs', {page: 'mainpage'}) %>
+		
+		<!--------------------------Variables for Large Image and Clickable Words----------------------------------->
+		<script>
+			var defaultImg = "oxford5.jpg";
+			
+			var descs = new Array();
+			descs[0] = "Autumnal Oxford";
+			descs[1] = "Summer in Kelowna";
+			descs[2] = "Hawaiian Spring";
+			descs[3] = "Toronto in Winter";
+			
+			var myImages = ["oxford5.jpg", "kelowna6.jpg", "hawaii4.jpg", "toronto3.jpg"];
+			
+			var myOxfordPics = ["oxford1.jpg","oxford2.jpg","oxford3.jpg","oxford4.jpg","oxford5.jpg",];
+			var myKelownaPics = ["kelowna1.jpg","kelowna2.jpg.jpg","kelowna3.jpg","kelowna4.jpg","kelowna5.jpg",];
+			var myHawaiiPics = ["hawaii1.jpg","hawaii2.jpg","hawaii3.jpg","hawaii4.jpg","hawaii5.jpg",];
+			var myTorontoPics = ["toronto1.jpg","toronto2.jpg","toronto3.jpg","toronto4.jpg","toronto5.jpg",];
+		</script>	
+		
+	</head>
+	<div id="container">
+	<div id="header"></div>
+	<div id="body">
+		<body id="firstpagebody">
+			<!-----------------------------Function for Large Image and Words------------------------------------->
+			<div class="row">
+				<div class="column">
+					
+					<table id="imagetable">
+					<script>
+						function loadImage(imgName)
+						{
+							document.getElementById("myImage").src = imgName;
+						}
+						for (i=0; i<descs.length; i++)
+						{
+							document.write("<th id='imagetableth'> |");
+							var myString = "<td id='imagetabletd' onclick='loadImage(\"" + myImages[i] + "\")'>"; 
+							document.write(myString); 
+							document.write(descs[i]);
+							document.write("</td>");
+							document.write("</th>");
+						}
+					</script>
+					
+					<!--------------------------Image Gallery------------------------->
+					<h6 id="galleryh6">
+					<div class="gallery">
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="kelowna2.jpg">
+						</div>  
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="hawaii3.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="toronto2.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="oxford4.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="hawaii2.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="oxford2.jpg">
+						</div>
+						<div class="thumbnail">
+							<img id="thumbimg" class="zoom" src="oxford1.jpg">
+						</div>
+					</h6>
+					</table>
+					
+					<!------------------------Basic Large Image-------------------------->
+					<div class="England"><img id="myImage" src="oxford5.jpg"/><br /></div>
+					</div>
+			<!---------------------Footer from Partials------------------------>
+			<div id="footer">Copyright Travel Agency 1999<sup>&copy;</sup></div>
+			
+		</body>
+		</div>
+	</div>
+</html>
+
+
