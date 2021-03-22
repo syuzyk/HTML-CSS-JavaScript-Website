@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" language="JavaScript" type="text/css" href="CSSstylesheet.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div class="w3-bar w3-indigo">
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="/vpackage" class="w3-bar-item w3-button">Packages</a>
+    <a href="/register" class="w3-bar-item w3-button">Registration</a>
+    <a href="/contactus" class="w3-bar-item w3-button">Contacts</a>
+    <a href="login" class="w3-bar-item w3-button" style="float:right;">Login</a>
+  </div>
+
+  <% if(page=='mainpage') { %>
+  <header id="mainpageheader"><br>Welcome to Travel Agency<h1 id="headerh1">The best vacation experience.</h1>
+  </header>
+  <% }else if(page=='contactus'){%>
+  <header id="mainpageheader"><br>Contact Us<h1 id="headerh1">Drop us a line.</h1>
+  </header>
+  <% }else if(page=='register'){%>
+  <header id="mainpageheader"><br>Register<h1 id="headerh1">Please enter your information.</h1>
+  </header>
+  <% }else if(page=='vpackage'){%>
+  <header id="mainpageheader"><br>Vacation Packages<h1 id="headerh1">Find your destination.</h1>
+  </header>
+  <% } else if(page=='order'){%>
+  <header id="mainpageheader"><br>Order Page<h1 id="headerh1">Confirm your order</h1>
+  </header>
+  <% } %>
+</head>
+
+</html>
