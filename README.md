@@ -1,4 +1,4 @@
-<p align="center">
+<div align="center">
 <h1>Travel Experts Website</h1>
 <h3>A website created using HTML, CSS, JavaScript, and Node for a fictitious travel agency (Travel Experts).</h3>
  
@@ -21,4 +21,4 @@
 ![MicrosoftTeams-image (3)](https://user-images.githubusercontent.com/74616516/112157830-35042800-8bad-11eb-9a99-b4d05d8a0ebc.png)
 
 ![MicrosoftTeams-image (4)](https://user-images.githubusercontent.com/74616516/112157844-3897af00-8bad-11eb-8ff4-27078611fcbc.png)
-</p>
+</div>
