@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Travel Experts Website</h1>
 <h3>A website created using HTML, CSS, JavaScript, and Node for a fictitious travel agency (Travel Experts).</h3>
-<hr>
+
 ![image](https://user-images.githubusercontent.com/74616516/112050292-4ea66080-8b16-11eb-9754-6827271500f8.png)
 
 ![image](https://user-images.githubusercontent.com/74616516/112050367-64b42100-8b16-11eb-96e1-5c86afad004b.png)
